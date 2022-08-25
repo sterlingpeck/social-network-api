@@ -8,22 +8,10 @@
     "start": "node server.js",
     "watch": "nodemon server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sterlingpeck/social-network-api.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sterlingpeck/social-network-api/issues"
-  },
-  "homepage": "https://github.com/sterlingpeck/social-network-api#readme",
   "dependencies": {
-    "mongo": "^0.1.0",
-    "mongoose": "^6.4.4",
-    "node": "^18.5.0",
-    "nodemon": "^2.0.19",
-    "validator": "^13.7.0",
-    "watch": "^1.0.2"
+    "express": "^4.17.2",
+    "luxon": "^2.3.0",
+    "mongoose": "^6.1.7",
+    "validator": "^13.7.0"
   }
 }
