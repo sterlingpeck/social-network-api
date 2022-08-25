@@ -1,20 +1,32 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model, Types } = require("mongoose");
 const validator = require("validator");
 
 const UserSchema = new Schema(
   {
     username: {
       type: String,
-      unique: [true, "username being used."],
-      required: [true, "username is needed"],
+      unique: [true, "That username is already in use!"],
+      required: [true, "A username is required!"],
       trim: true,
     },
     email: {
       type: String,
-      unique: [true, "email is being used"],
-      required: [true, "email is needed"],
-      validate: [validator.isEmail, "Please enter valid email address"],
+      unique: [true, "That email is already in use!"],
+      required: [true, "An email address is required!"],
+      validate: [validator.isEmail, "Please enter a valid email address!"],
     },
+    thoughts: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Thought",
+      },
+    ],
+    friends: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+      },
+    ],
   },
   {
     toJSON: {
